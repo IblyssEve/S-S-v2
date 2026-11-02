@@ -55,16 +55,23 @@
   border-left: 2px solid var(--violet);
 }
 
+/* ВОТ ТУТ СТИЛИ ДЛЯ КРАСИВОГО КУРСИВА */
 .ritual-instruction {
-  font-family: 'Caveat', cursive;
+  font-family: 'Caveat', cursive, sans-serif;
   font-size: clamp(22px, 4vw, 36px);
   color: var(--white);
   line-height: 1.4;
   margin-bottom: 32px;
   text-shadow: 0 0 10px rgba(255,255,255,0.1);
+  text-align: center; /* Выравнивание по центру */
+  display: block; /* Чтобы занимал свою строку */
 }
 
-#ritual-container { display: none; margin-bottom: 32px; }
+#ritual-container { 
+  display: none; 
+  margin-bottom: 32px; 
+}
+
 #ritual-placeholder { 
   font-family: 'Caveat', cursive; 
   font-size: clamp(22px, 4vw, 36px); 
