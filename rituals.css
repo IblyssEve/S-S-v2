@@ -1,0 +1,76 @@
+/* --- СТИЛИ ДЛЯ РИТУАЛОВ --- */
+.ritual-photo {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border: 1px solid #1a1a1a;
+  display: block;
+  margin-bottom: 24px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.ritual-box {
+  background: #0a0a0a;
+  border: 1px solid var(--blood);
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(204, 0, 0, 0.1);
+}
+
+.ritual-box::before {
+  content: '✶';
+  position: absolute;
+  top: 12px; left: 16px;
+  color: var(--blood);
+  opacity: 0.7;
+  text-shadow: 0 0 10px var(--blood-glow);
+}
+
+.ritual-card-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  color: var(--blood);
+  text-shadow: 0 0 15px var(--blood-glow);
+  margin-bottom: 8px;
+}
+
+.ritual-card-astro {
+  font-size: 12px;
+  color: var(--violet);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.ritual-scheme {
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 24px;
+  line-height: 1.8;
+  text-align: left;
+  background: rgba(255,255,255,0.03);
+  padding: 20px;
+  border-left: 2px solid var(--violet);
+}
+
+.ritual-instruction {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(22px, 4vw, 36px);
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 32px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+#ritual-container { display: none; margin-bottom: 32px; }
+#ritual-placeholder { 
+  font-family: 'Caveat', cursive; 
+  font-size: clamp(22px, 4vw, 36px); 
+  color: var(--muted); 
+  min-height: 100px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 32px; 
+}
