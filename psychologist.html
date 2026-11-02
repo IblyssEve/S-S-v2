@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="psychologist.css">
 
 <style>
-  /* Стили для всплывающего уведомления */
   .toast {
     position: fixed;
     bottom: 30px;
@@ -38,6 +37,15 @@
     font-size: 12px;
     color: var(--muted);
     margin-bottom: 12px;
+    font-weight: bold;
+  }
+  .btn:disabled {
+    border-color: var(--muted);
+    color: var(--muted);
+    text-shadow: none;
+    cursor: not-allowed;
+    background: transparent;
+    box-shadow: none;
   }
 </style>
 </head>
@@ -72,75 +80,66 @@
     <h3>Выбери маскота рубрики</h3>
     
     <div class="unicorn-grid">
-      <!-- 1. Гности -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Expressive_charcoal_and_marker_sketch_side_profile_of_a_hellish_unicorn._The_sil-0.jpg" alt="Гности" />
         <h4>Гности</h4>
-        <div class="vote-count">Голосов: 14</div>
+        <div class="vote-count" id="count-Гности">Голосов: 14</div>
         <button class="btn violet" onclick="vote('Гности')">Голосовать</button>
       </div>
 
-      <!-- 2. СайберГоти -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Expressive_charcoal_and_marker_sketch.jpg" alt="СайберГоти" />
         <h4>СайберГоти</h4>
-        <div class="vote-count">Голосов: 23</div>
+        <div class="vote-count" id="count-СайберГоти">Голосов: 23</div>
         <button class="btn violet" onclick="vote('СайберГоти')">Голосовать</button>
       </div>
 
-      <!-- 3. Сигил -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_A_dark_occult_sigil_side_profile_of_a_demonic_unicorn_enclosed_within_a_perfect_-0.jpg" alt="Сигил" />
         <h4>Сигил</h4>
-        <div class="vote-count">Голосов: 8</div>
+        <div class="vote-count" id="count-Сигил">Голосов: 8</div>
         <button class="btn violet" onclick="vote('Сигил')">Голосовать</button>
       </div>
 
-      <!-- 4. Cleft -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Extreme_minimalist_logo_using_negative_space._A_side_profile_of_a_demonic_unicor-0.jpg" alt="Cleft" />
         <h4>Cleft</h4>
-        <div class="vote-count">Голосов: 19</div>
+        <div class="vote-count" id="count-Cleft">Голосов: 19</div>
         <button class="btn violet" onclick="vote('Cleft')">Голосовать</button>
       </div>
 
-      <!-- 5. UniPorn -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Retro_90s_VHS_horror_aesthetic_side_profile_of_a_cursed_unicorn._The_image_has_g-0.jpg" alt="UniPorn" />
         <h4>UniPorn</h4>
-        <div class="vote-count">Голосов: 31</div>
+        <div class="vote-count" id="count-UniPorn">Голосов: 31</div>
         <button class="btn violet" onclick="vote('UniPorn')">Голосовать</button>
       </div>
 
-      <!-- 6. НяшаДаша -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Delicate_graphite_and_colored_pencil_drawing_on_textured_paper_side_profile_of_a-0.jpg" alt="НяшаДаша" />
         <h4>НяшаДаша</h4>
-        <div class="vote-count">Голосов: 27</div>
+        <div class="vote-count" id="count-НяшаДаша">Голосов: 27</div>
         <button class="btn violet" onclick="vote('НяшаДаша')">Голосовать</button>
       </div>
 
-      <!-- 7. MetaBoss -->
       <div class="unicorn-card">
         <img src="https://iblysseve.github.io/SS/lucid-origin_Вот_промпт_под_номером_8_метагерб_объединяю-0.jpg" alt="MetaBoss" />
         <h4>MetaBoss</h4>
-        <div class="vote-count">Голосов: 11</div>
+        <div class="vote-count" id="count-MetaBoss">Голосов: 11</div>
         <button class="btn violet" onclick="vote('MetaBoss')">Голосовать</button>
       </div>
 
-      <!-- 8. Ibly (ЛИДЕР) -->
       <div class="unicorn-card">
         <img src="img/IMG_20261102_164616_122.jpg" alt="Ibly" />
         <h4>Ibly</h4>
-        <div class="vote-count" style="color: var(--violet); font-weight: bold;">Голосов: 148</div>
+        <div class="vote-count" id="count-Ibly" style="color: var(--violet); font-weight: bold;">Голосов: 148</div>
         <button class="btn violet" onclick="vote('Ibly')">Голосовать</button>
       </div>
 
-      <!-- 9. Knightmare (ВТОРОЙ) -->
       <div class="unicorn-card">
         <img src="img/IMG_20261102_164615_872.jpg" alt="Knightmare" />
         <h4>Knightmare</h4>
-        <div class="vote-count" style="color: var(--violet);">Голосов: 112</div>
+        <div class="vote-count" id="count-Knightmare" style="color: var(--violet);">Голосов: 112</div>
         <button class="btn violet" onclick="vote('Knightmare')">Голосовать</button>
       </div>
     </div>
@@ -160,15 +159,29 @@
   <p class="copy">© S&amp;S</p>
 </footer>
 
-<!-- Всплывашка -->
 <div id="toast" class="toast">Спасибо! Твой голос учтён.</div>
 
 <script>
   function vote(name) {
     const toast = document.getElementById('toast');
+    const counterElement = document.getElementById('count-' + name);
+    const button = event.target;
+
+    // Берем текущее число из текста "Голосов: 148"
+    let currentVotes = parseInt(counterElement.textContent.replace(/\D/g, ''));
+    currentVotes++;
+    
+    // Обновляем цифру в карточке
+    counterElement.textContent = `Голосов: ${currentVotes}`;
+    
+    // Показываем всплывашку
     toast.textContent = `Спасибо! Твой голос за ${name} учтён.`;
     toast.classList.add('show');
     
+    // Блокируем кнопку, чтобы не накликали много
+    button.disabled = true;
+    button.textContent = "Голос учтён";
+
     setTimeout(() => {
       toast.classList.remove('show');
     }, 2000);
