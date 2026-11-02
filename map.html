@@ -43,6 +43,45 @@
   .custom-pentagram-icon:hover {
     transform: scale(1.2);
   }
+
+  /* СТИЛИ ДЛЯ НИЦШЕ (чтобы был по центру и курсивом) */
+  .nietzsche {
+    text-align: center;
+    padding: 80px 20px;
+  }
+  .nietzsche blockquote {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(24px, 4vw, 44px);
+    color: var(--blood);
+    text-shadow: 0 0 20px var(--blood-glow), 0 0 40px var(--blood-glow);
+    max-width: 800px;
+    margin: 0 auto 24px;
+    line-height: 1.2;
+  }
+  .nietzsche .sign {
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+  }
+  .nietzsche-photo {
+    width: clamp(200px, 50vw, 300px);
+    height: auto;
+    margin: 40px auto;
+    display: block;
+    filter: grayscale(100%) contrast(1.5) brightness(0.8);
+    mask-image: radial-gradient(circle, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(204, 0, 0, 0.3);
+  }
+  .nietzsche .micro {
+    color: var(--blood);
+    text-shadow: 0 0 15px var(--blood-glow), 0 0 30px var(--blood-glow);
+    font-size: clamp(16px, 3vw, 22px);
+    margin-top: 32px;
+    font-weight: 600;
+    font-family: 'Caveat', cursive;
+  }
 </style>
 </head>
 <body>
@@ -62,7 +101,7 @@
 </section>
 
 <!-- НИЦШЕ -->
-<section class="nietzsche" style="padding-top: 20px;">
+<section class="nietzsche">
   <blockquote>«Что не убивает нас, делает нас заброшками.»</blockquote>
   <p class="sign">— Ницше, наверное</p>
   <img class="nietzsche-photo" src="https://iblysseve.github.io/SS/Friedrich_Nietzsche_drawn_by_Hans_Olde.jpg" alt="Ницше" />
@@ -85,43 +124,29 @@
     maxZoom: 19
   }).addTo(map);
 
-  // Создаем иконку "Проволока в крови"
   var pentagramIcon = L.divIcon({
     className: 'custom-pentagram-icon',
     html: `<svg viewBox="0 0 100 100" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
              <defs>
-               <!-- Градиент для металла (проволоки) -->
                <linearGradient id="rust" x1="0%" y1="0%" x2="100%" y2="100%">
                  <stop offset="0%" stop-color="#555" />
                  <stop offset="50%" stop-color="#222" />
                  <stop offset="100%" stop-color="#4a4538" />
                </linearGradient>
-               
-               <!-- Градиент для крови -->
                <linearGradient id="blood" x1="0%" y1="0%" x2="0%" y2="100%">
                  <stop offset="0%" stop-color="#ff0000" />
                  <stop offset="100%" stop-color="#4a0000" />
                </linearGradient>
              </defs>
-             
-             <!-- Круг (проволока) -->
              <circle cx="50" cy="50" r="45" fill="none" stroke="url(#rust)" stroke-width="4"/>
              <circle cx="50" cy="50" r="45" fill="none" stroke="url(#blood)" stroke-width="1.5" opacity="0.8" stroke-dasharray="10 5"/>
-             
-             <!-- Звезда (проволока) -->
              <path d="M50 5 L63 38 L98 38 L70 60 L80 95 L50 73 L20 95 L30 60 L2 38 L37 38 Z" 
                    fill="none" stroke="url(#rust)" stroke-width="4" stroke-linejoin="miter"/>
-             
-             <!-- Кровавые разводы на звезде -->
              <path d="M50 5 L63 38 L98 38 L70 60 L80 95 L50 73 L20 95 L30 60 L2 38 L37 38 Z" 
                    fill="none" stroke="url(#blood)" stroke-width="1.5" stroke-linejoin="miter" opacity="0.9" transform="translate(0.5, 0.5)"/>
-             
-             <!-- Потёки крови (капли) -->
              <path d="M22 90 Q20 98 16 100 Q12 98 14 92 Z" fill="url(#blood)" />
              <path d="M78 90 Q80 98 84 100 Q88 98 86 92 Z" fill="url(#blood)" />
              <path d="M50 73 Q52 82 50 88 Q48 82 50 73 Z" fill="url(#blood)" />
-             
-             <!-- Мелкие брызги -->
              <circle cx="15" cy="70" r="1.5" fill="#ff0000" opacity="0.7"/>
              <circle cx="85" cy="65" r="2" fill="#ff0000" opacity="0.6"/>
              <circle cx="25" cy="30" r="1" fill="#ff0000" opacity="0.5"/>
@@ -132,7 +157,6 @@
     popupAnchor: [0, -25]
   });
 
-  // Метки с новой иконкой
   var marker1 = L.marker([60.022670, 30.389485], {icon: pentagramIcon}).addTo(map);
   marker1.bindPopup("<b>Вавиловых, 12</b><br>Заброшенный роддом");
 
