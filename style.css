@@ -306,3 +306,64 @@ footer .copy { margin-top: 24px; color: #4a4538; }
   .btn { padding: 12px 20px; font-size: 12px; }
   .hero-content { margin-top: 0; }
   }
+/* --- СТИЛИ ДЛЯ ХРОНИК --- */
+.chronicles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.chron-card {
+  background: var(--bg2);
+  border: 1px solid #1a1a1a;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.chron-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blood);
+  box-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
+}
+
+.chron-img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.chron-video {
+  height: 220px;
+  width: 100%;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.chron-body { 
+  padding: 20px; 
+  flex-grow: 1; 
+}
+
+.chron-body h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--blood);
+  text-shadow: 0 0 8px var(--blood-glow);
+}
+
+.chron-body p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.chronicles-note {
+  margin-top: 32px;
+  padding: 16px;
+  border-left: 3px solid var(--blood);
+  box-shadow: -4px 0 12px -4px var(--blood-glow);
+  color: var(--muted);
+  font-size: 13px;
+}
