@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <style>
@@ -20,6 +19,10 @@
     margin-bottom: 40px;
     z-index: 1;
     background: #000;
+  }
+  /* ДЕЛАЕМ КАРТУ ТЁМНОЙ ЧЕРЕЗ CSS-ФИЛЬТР */
+  .leaflet-layer {
+    filter: invert(1) hue-rotate(180deg) brightness(0.6) contrast(1.2);
   }
   .map-note {
     text-align: center;
@@ -44,7 +47,6 @@
 
   <div class="map-note">Визуал на пути из бездны</div>
 
-  <!-- Контейнер для карты -->
   <div id="map"></div>
 </section>
 
@@ -63,21 +65,14 @@
   <p class="copy">© S&amp;S</p>
 </footer>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<!-- MapLibre GL JS (для векторных тайлов) -->
-<script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
-<!-- Плагин для связки Leaflet + MapLibre -->
-<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.20/leaflet-maplibre-gl.js"></script>
-
 <script>
-  // Инициализация карты
   var map = L.map('map').setView([59.94, 30.31], 11);
 
-  // Тёмная подложка OpenFreeMap (без ключа)
-  var gl = L.maplibreGL({
-    style: 'https://tiles.openfreemap.org/styles/dark'
+  // Обычные тайлы OSM, которые мы затемним фильтром
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap',
+    maxZoom: 19
   }).addTo(map);
 
   // Метки
