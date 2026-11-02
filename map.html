@@ -20,9 +20,15 @@
     z-index: 1;
     background: #000;
   }
-  .leaflet-layer {
+  /* Фильтр только для слоя карты */
+  .leaflet-tile-pane {
     filter: invert(1) hue-rotate(180deg) brightness(0.6) contrast(1.2);
   }
+  /* Снимаем фильтр с маркеров, чтобы они были яркими */
+  .leaflet-marker-pane {
+    filter: none !important;
+  }
+  
   .map-note {
     text-align: center;
     color: var(--blood);
@@ -32,7 +38,6 @@
     text-shadow: 0 0 15px var(--blood-glow);
   }
   
-  /* Стиль для нашей кастомной пентаграммы */
   .custom-pentagram-icon {
     filter: drop-shadow(0 0 5px var(--blood-glow));
     transition: transform 0.2s;
@@ -90,8 +95,8 @@
                    fill="none" stroke="#cc0000" stroke-width="4" stroke-linejoin="round"/>
            </svg>`,
     iconSize: [30, 30],
-    iconAnchor: [15, 15], // Центрируем иконку относительно координат
-    popupAnchor: [0, -15] // Окно с текстом появляется чуть выше
+    iconAnchor: [15, 15],
+    popupAnchor: [0, -15]
   });
 
   // Метки с новой иконкой
