@@ -87,13 +87,16 @@ function generateRitual() {
   
   document.getElementById('r-title').textContent = random.title;
   document.getElementById('r-astro').textContent = `Стихия: ${random.element} | Астрология: ${random.astro}`;
+  
   document.getElementById('r-scheme').innerHTML = `
-    <strong>Намерение:</strong> ${random.intent}.<br>
-    <strong>Жест:</strong> ${random.gesture}.<br>
-    <strong>Предмет:</strong> ${random.object}.<br>
+    <strong>Намерение:</strong> ${random.intent}.<br><br>
+    <strong>Жест:</strong> ${random.gesture}.<br><br>
+    <strong>Предмет:</strong> ${random.object}.<br><br>
     <strong>Слово:</strong> ${random.word}.
   `;
-  document.getElementById('r-instruction').textContent = random.instruction;
+  
+  // Заменили textContent на innerHTML, чтобы текст был внутри абзаца и красиво переносился
+  document.getElementById('r-instruction').innerHTML = `<p style="margin:0;">${random.instruction}</p>`;
   
   placeholder.style.display = 'none';
   container.style.display = 'block';
@@ -103,4 +106,4 @@ function generateRitual() {
     container.style.transition = 'opacity 0.5s';
     container.style.opacity = 1;
   }, 50);
-}
+    }
