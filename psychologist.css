@@ -1,0 +1,96 @@
+/* --- СТИЛИ ДЛЯ ПСИХОЛОГА --- */
+.psycho-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.psycho-clown {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  border: 2px solid var(--blood);
+  box-shadow: 0 0 30px var(--blood-glow);
+  margin-bottom: 20px;
+}
+
+.psycho-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--blood);
+  text-shadow: 0 0 20px var(--blood-glow);
+  margin-bottom: 16px;
+}
+
+.psycho-text {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: left;
+}
+
+.psycho-text p { margin-bottom: 16px; }
+
+.psycho-note {
+  font-size: 13px;
+  color: var(--violet);
+  font-style: italic;
+  border-left: 2px solid var(--violet);
+  padding-left: 12px;
+  margin-top: 24px;
+}
+
+/* Голосование за маскотов */
+.unicorn-vote {
+  margin-top: 60px;
+}
+
+.unicorn-vote h3 {
+  text-align: center;
+  color: var(--violet);
+  text-shadow: 0 0 15px var(--violet-glow);
+  margin-bottom: 32px;
+  font-size: 24px;
+}
+
+.unicorn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.unicorn-card {
+  background: var(--bg2);
+  border: 1px solid #1a1a1a;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.unicorn-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--violet);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.15);
+}
+
+.unicorn-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+}
+
+.unicorn-card h4 {
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.unicorn-card .btn {
+  padding: 8px 16px;
+  font-size: 12px;
+  width: 100%;
+}
