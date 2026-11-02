@@ -20,11 +20,9 @@
     z-index: 1;
     background: #000;
   }
-  /* Фильтр только для слоя карты */
   .leaflet-tile-pane {
     filter: invert(1) hue-rotate(180deg) brightness(0.6) contrast(1.2);
   }
-  /* Снимаем фильтр с маркеров, чтобы они были яркими */
   .leaflet-marker-pane {
     filter: none !important;
   }
@@ -39,7 +37,7 @@
   }
   
   .custom-pentagram-icon {
-    filter: drop-shadow(0 0 5px var(--blood-glow));
+    filter: drop-shadow(0 0 8px rgba(204, 0, 0, 0.8));
     transition: transform 0.2s;
   }
   .custom-pentagram-icon:hover {
@@ -87,16 +85,51 @@
     maxZoom: 19
   }).addTo(map);
 
-  // Создаем кастомную иконку-пентаграмму
+  // Создаем иконку "Проволока в крови"
   var pentagramIcon = L.divIcon({
     className: 'custom-pentagram-icon',
-    html: `<svg viewBox="0 0 100 100" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+    html: `<svg viewBox="0 0 100 100" width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+             <defs>
+               <!-- Градиент для металла (проволоки) -->
+               <linearGradient id="rust" x1="0%" y1="0%" x2="100%" y2="100%">
+                 <stop offset="0%" stop-color="#555" />
+                 <stop offset="50%" stop-color="#222" />
+                 <stop offset="100%" stop-color="#4a4538" />
+               </linearGradient>
+               
+               <!-- Градиент для крови -->
+               <linearGradient id="blood" x1="0%" y1="0%" x2="0%" y2="100%">
+                 <stop offset="0%" stop-color="#ff0000" />
+                 <stop offset="100%" stop-color="#4a0000" />
+               </linearGradient>
+             </defs>
+             
+             <!-- Круг (проволока) -->
+             <circle cx="50" cy="50" r="45" fill="none" stroke="url(#rust)" stroke-width="4"/>
+             <circle cx="50" cy="50" r="45" fill="none" stroke="url(#blood)" stroke-width="1.5" opacity="0.8" stroke-dasharray="10 5"/>
+             
+             <!-- Звезда (проволока) -->
              <path d="M50 5 L63 38 L98 38 L70 60 L80 95 L50 73 L20 95 L30 60 L2 38 L37 38 Z" 
-                   fill="none" stroke="#cc0000" stroke-width="4" stroke-linejoin="round"/>
+                   fill="none" stroke="url(#rust)" stroke-width="4" stroke-linejoin="miter"/>
+             
+             <!-- Кровавые разводы на звезде -->
+             <path d="M50 5 L63 38 L98 38 L70 60 L80 95 L50 73 L20 95 L30 60 L2 38 L37 38 Z" 
+                   fill="none" stroke="url(#blood)" stroke-width="1.5" stroke-linejoin="miter" opacity="0.9" transform="translate(0.5, 0.5)"/>
+             
+             <!-- Потёки крови (капли) -->
+             <path d="M22 90 Q20 98 16 100 Q12 98 14 92 Z" fill="url(#blood)" />
+             <path d="M78 90 Q80 98 84 100 Q88 98 86 92 Z" fill="url(#blood)" />
+             <path d="M50 73 Q52 82 50 88 Q48 82 50 73 Z" fill="url(#blood)" />
+             
+             <!-- Мелкие брызги -->
+             <circle cx="15" cy="70" r="1.5" fill="#ff0000" opacity="0.7"/>
+             <circle cx="85" cy="65" r="2" fill="#ff0000" opacity="0.6"/>
+             <circle cx="25" cy="30" r="1" fill="#ff0000" opacity="0.5"/>
+             <circle cx="75" cy="30" r="1.5" fill="#ff0000" opacity="0.5"/>
            </svg>`,
-    iconSize: [30, 30],
-    iconAnchor: [15, 15],
-    popupAnchor: [0, -15]
+    iconSize: [50, 50],
+    iconAnchor: [25, 25],
+    popupAnchor: [0, -25]
   });
 
   // Метки с новой иконкой
