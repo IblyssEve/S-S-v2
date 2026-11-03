@@ -1,0 +1,64 @@
+/* --- СТИЛИ ДЛЯ МАНИФЕСТА --- */
+.manifest-box {
+  background: #0a0a0a;
+  border: 2px solid var(--blood);
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  box-shadow: 0 0 40px rgba(204, 0, 0, 0.2);
+  position: relative;
+}
+
+.manifest-box::before {
+  content: '✶';
+  position: absolute;
+  top: 15px; left: 20px;
+  color: var(--blood);
+  font-size: 24px;
+  text-shadow: 0 0 10px var(--blood-glow);
+}
+
+.manifest-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: clamp(28px, 5vw, 48px);
+  color: var(--blood);
+  text-align: center;
+  text-shadow: 0 0 20px var(--blood-glow);
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.manifest-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: manifest-counter;
+}
+
+.manifest-list li {
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
+  text-align: left;
+}
+
+.manifest-list li::before {
+  counter-increment: manifest-counter;
+  content: counter(manifest-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blood);
+  font-family: 'Unbounded', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 10px var(--blood-glow);
+}
+
+.manifest-list li strong {
+  color: var(--blood);
+  text-shadow: 0 0 8px var(--blood-glow);
+}
