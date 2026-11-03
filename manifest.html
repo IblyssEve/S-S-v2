@@ -1,64 +1,59 @@
-/* --- СТИЛИ ДЛЯ МАНИФЕСТА --- */
-.manifest-box {
-  background: #0a0a0a;
-  border: 2px solid var(--blood);
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto 40px;
-  box-shadow: 0 0 40px rgba(204, 0, 0, 0.2);
-  position: relative;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Манiфѣстъ — S&S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="manifest.css">
+</head>
+<body>
 
-.manifest-box::before {
-  content: '✶';
-  position: absolute;
-  top: 15px; left: 20px;
-  color: var(--blood);
-  font-size: 24px;
-  text-shadow: 0 0 10px var(--blood-glow);
-}
+<!-- НАВИГАЦИЯ -->
+<div style="padding: 20px; max-width: 1100px; margin: 0 auto;">
+  <a href="index.html" class="btn" style="border-color: var(--muted); color: var(--muted);">&larr; На главную</a>
+</div>
 
-.manifest-title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: clamp(28px, 5vw, 48px);
-  color: var(--blood);
-  text-align: center;
-  text-shadow: 0 0 20px var(--blood-glow);
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+<!-- СЕКЦИЯ МАНИФЕСТА -->
+<section id="manifest">
+  
+  <!-- НАЗВАНИЕ РУБРИКИ -->
+  <h1 class="sec-title" style="text-align: center; margin-bottom: 30px;">Манiфѣстъ</h1>
 
-.manifest-list {
-  list-style: none;
-  padding: 0;
-  counter-reset: manifest-counter;
-}
+  <!-- КАРТИНКА СВЕРХУ -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <img src="img/IMG_20261103_152341_806.jpg" alt="Манифест" style="max-width: 100%; width: 500px; border: 2px solid var(--blood); box-shadow: 0 0 30px rgba(204,0,0,0.3);" />
+  </div>
 
-.manifest-list li {
-  position: relative;
-  padding-left: 50px;
-  margin-bottom: 24px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--white);
-  text-align: left;
-}
+  <div class="manifest-box">
+    <h2 class="manifest-title">РУБИНОВАЯ СКРИЖАЛЬ САТАНИНСКОЙ ЗАБРОШКИ</h2>
+    
+    <ol class="manifest-list">
+      <li><strong>Не лезь со своим мнением, если не спрашивали.</strong> Твой трип — только твой, блядь. Хочешь вкинуть мудрость — сначала дождись, пока тебя об этом попросят. Иначе иди нахуй со своим экспертным мнением.</li>
+      <li><strong>Не вываливай свой треш на других.</strong> Никто не обязан быть твоей жилеткой, блядь. У нас тут не психологический кружок, а адская заброшка. Держи свой пиздец при себе.</li>
+      <li><strong>Зашел в чужой лор — покажи уважение.</strong> Или не заходи, нахуй. Тут не любят тех, кто лезет в чужой движ без стука. Сунешься без спроса — получишь пизды.</li>
+      <li><strong>Если пришелец в твоем лоре бесит — выкинь его нахуй.</strong> Без соплей и объяснений. Твое пространство — твои правила. Заебал — съебал.</li>
+      <li><strong>Не лезь к человечеству с клешнями, если тебе не дали зеленый свет.</strong> Сигнал — это всё, блядь. Без сигнала ты просто кринж и хуйло, которое не умеет читать социальные коды.</li>
+      <li><strong>Не тяни чужое.</strong> Если это не твой груз и тебя не просят его взять — не трогай. Жадность — удел лохов, блядь.</li>
+      <li><strong>Признавай силу движа, если он сработал.</strong> Если ты получил то, что хотел через ритуал или интуицию — не отрицай это, сука. Иначе все потеряешь, и будешь насажен на вилы.</li>
+      <li><strong>Не скули о том, куда тебя не звали.</strong> Хочешь — участвуй. Не хочешь — не ной, блядь. Тут не любят нытиков, которые льют сопли.</li>
+      <li><strong>Не трогай детей.</strong> Это святое, блядь. Даже в аду есть правила, и это — одно из главных. Обидишь ребенка — тебя самого сожгут и обоссут пепел.</li>
+      <li><strong>Не убивай зверьков просто так.</strong> Только если тебя атакуют или если ты реально дохнешь от голода, блядь. Мы не мясники, мы — сатанисты с принципами. За просто так — нехуй. А ты нахуй. И даже насекомых не убивай, сука. Насекомые — это морфобиологические символы демонов, а демоны — наши братья.</li>
+      <li><strong>Идешь по территории — не трогай никого.</strong> Если кто-то наехал — скажи, чтобы отвалил. Если он тупой и не понимает — выруби его нахуй. Без жалости, без сантиментов. В нашем аду терпил нет.</li>
+    </ol>
+  </div>
+</section>
 
-.manifest-list li::before {
-  counter-increment: manifest-counter;
-  content: counter(manifest-counter) ".";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--blood);
-  font-family: 'Unbounded', sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 0 0 10px var(--blood-glow);
-}
+<!-- ФУТЕР -->
+<footer>
+  <div class="logo">S&amp;S</div>
+  <p>Соня и Саня. Хроники, музыка, ритуалы.</p>
+  <p class="copy">© S&amp;S</p>
+</footer>
 
-.manifest-list li strong {
-  color: var(--blood);
-  text-shadow: 0 0 8px var(--blood-glow);
-}
+<script src="nav.js"></script>
+</body>
+</html>
