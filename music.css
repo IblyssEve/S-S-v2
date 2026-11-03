@@ -5,19 +5,6 @@
   padding-top: 40px;
 }
 
-/* Привязываем пентаграмму строго к центру контента */
-.music-pentagram-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(15deg);
-  width: clamp(400px, 90vw, 900px);
-  height: clamp(400px, 90vw, 900px);
-  z-index: 0;
-  opacity: 0.25;
-  pointer-events: none;
-}
-
 .music-content {
   position: relative;
   z-index: 1;
@@ -26,16 +13,29 @@
   align-items: center;
 }
 
-/* Контейнер для фото Сони */
+/* Контейнер, внутри которого и фото, и пентаграмма */
 .sofia-portrait-wrap {
   position: relative;
-  width: clamp(200px, 50vw, 300px);
-  height: clamp(200px, 50vw, 300px);
-  margin: 0 auto 40px auto; /* Центрируем сам контейнер */
+  width: clamp(220px, 55vw, 320px);
+  height: clamp(220px, 55vw, 320px);
+  margin: 0 auto 40px auto;
   border-radius: 50%;
   padding: 8px;
   background: linear-gradient(45deg, var(--violet), var(--blood));
   box-shadow: 0 0 40px var(--violet-glow);
+}
+
+/* Пентаграмма теперь жестко привязана к этому контейнеру */
+.pentagram-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  width: 250%;  /* Делаем больше фото */
+  height: 250%;
+  z-index: -1;  /* Убираем на задний план */
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .sofia-portrait {
@@ -44,6 +44,8 @@
   object-fit: cover;
   border-radius: 50%;
   filter: contrast(1.1) brightness(1.1);
+  position: relative;
+  z-index: 1;
 }
 
 .video-container {
