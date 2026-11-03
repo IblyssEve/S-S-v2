@@ -27,13 +27,18 @@
     filter: none !important;
   }
   
-  .map-note {
+  /* Стиль для нового текста над картой */
+  .map-warning {
     text-align: center;
     color: var(--blood);
     font-family: 'Caveat', cursive;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: clamp(20px, 4vw, 28px);
+    margin-bottom: 30px;
+    line-height: 1.4;
     text-shadow: 0 0 15px var(--blood-glow);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .custom-pentagram-icon {
@@ -44,7 +49,7 @@
     transform: scale(1.2);
   }
 
-  /* СТИЛИ ДЛЯ НИЦШЕ (чтобы был по центру и курсивом) */
+  /* СТИЛИ ДЛЯ НИЦШЕ */
   .nietzsche {
     text-align: center;
     padding: 80px 20px;
@@ -93,9 +98,16 @@
 
 <section id="map-section">
   <h2 class="sec-title">Карта заброшек</h2>
-  <p class="sec-sub">Места, где мы были. Визуал на пути из бездны.</p>
-
-  <div class="map-note">Визуал на пути из бездны</div>
+  
+  <!-- НОВЫЙ ТЕКСТ С КАПСЛОКОМ -->
+  <div class="map-warning">
+    <strong>СМЕРТНЫЕ!</strong><br>
+    Посетили сайт — значит, стали частью демонической игры.<br>
+    Вы уже вовлечены в адское пространство наших контркультурных девиаций.<br>
+    Вся жизнь есть Лила — огромная игра.<br>
+    Взглянули на карту — значит, начали играть.<br>
+    Соответствующий интерактив тоже медленно подтягивается со дна ада, как платформа.
+  </div>
 
   <div id="map"></div>
 </section>
