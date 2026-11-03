@@ -8,63 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
-<style>
-  .ritual-box {
-    background: #0a0a0a;
-    border: 1px solid var(--blood);
-    padding: 40px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 0 40px rgba(204, 0, 0, 0.1);
-  }
-  .ritual-card-title {
-    font-family: 'Unbounded', sans-serif;
-    font-size: 24px;
-    color: var(--blood);
-    text-shadow: 0 0 15px var(--blood-glow);
-    margin-bottom: 8px;
-  }
-  .ritual-card-astro {
-    font-size: 12px;
-    color: var(--violet);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 24px;
-  }
-  .ritual-scheme {
-    font-size: 14px;
-    color: var(--white);
-    margin-bottom: 24px;
-    line-height: 1.8;
-    text-align: left;
-    background: rgba(255,255,255,0.03);
-    padding: 20px;
-    border-left: 2px solid var(--violet);
-  }
-  /* САМОЕ ВАЖНОЕ - СТИЛЬ ДЛЯ ТЕКСТА РИТУАЛА */
-  .ritual-instruction {
-    font-family: 'Caveat', cursive !important;
-    font-size: clamp(24px, 5vw, 38px) !important;
-    color: var(--white) !important;
-    line-height: 1.4 !important;
-    margin-bottom: 32px !important;
-    text-shadow: 0 0 15px rgba(255,255,255,0.2) !important;
-    text-align: center !important;
-    display: block !important;
-  }
-  #ritual-container { display: none; margin-bottom: 32px; }
-  #ritual-placeholder { 
-    font-family: 'Caveat', cursive; 
-    font-size: clamp(22px, 4vw, 36px); 
-    color: var(--muted); 
-    min-height: 100px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    margin-bottom: 32px; 
-  }
-</style>
+<link rel="stylesheet" href="rituals.css">
 </head>
 <body>
 
@@ -78,6 +22,7 @@
   <h2 class="sec-title">Книга ритуалов</h2>
   <p class="sec-sub">Нешуточные ритуалы. Работают.</p>
 
+  <!-- ПЕРВЫЙ АБЗАЦ -->
   <div style="margin-bottom: 40px; font-size: 16px; max-width: 800px; color: var(--muted); background: rgba(255,255,255,0.02); padding: 20px; border-left: 2px solid var(--violet);">
     <p>Брайан Ино говорил, что музыка — это не звук, а пространство между звуками. Мы пошли дальше: наши ритуалы — это не действие, а пауза между мыслью и жестом. В книге «Искусство импровизационной техномагии» написано: форма не важна, важен сбой. Мы согласны.</p>
   </div>
@@ -87,13 +32,17 @@
     <img src="img/Picsart_26-10-29_20-50-40-378.jpg" alt="Ритуал" style="width: 400px !important; max-width: 100% !important; height: auto !important; border: 1px solid #1a1a1a; box-shadow: 0 0 30px rgba(0,0,0,0.8); display: inline-block;" />
   </div>
 
+  <!-- ВТОРОЙ АБЗАЦ (ПОД ФОТО) -->
+  <div style="margin-bottom: 40px; font-size: 16px; max-width: 800px; color: var(--muted); background: rgba(255,255,255,0.02); padding: 20px; border-left: 2px solid var(--violet);">
+    <p>Соня считает эти ритуалы примитивными. Я — нет. За ними стоит моя собственная концепция импровизационной техномагии. Но я брал пример с великого Брайана Ино и его карт «Oblique Strategies» (Косвенные стратегии), которые он создал ещё в 1975 году. Когда у него был творческий ступор, он вытаскивал карту наугад и делал то, что она советовала. И это работало. Так что, ребята, у нас охуеть какой культурный бэкграунд.</p>
+  </div>
+
   <div class="ritual-box">
     <div id="ritual-placeholder">Нажми на кнопку — получишь ритуал.</div>
     <div id="ritual-container">
       <div class="ritual-card-title" id="r-title"></div>
       <div class="ritual-card-astro" id="r-astro"></div>
       <div class="ritual-scheme" id="r-scheme"></div>
-      <!-- ВОТ СЮДА ВЫВОДИТСЯ ТЕКСТ -->
       <div class="ritual-instruction" id="r-instruction"></div>
     </div>
     <button class="btn" onclick="generateRitual()">Сгенерировать ритуал</button>
