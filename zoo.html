@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Зооуголок — S&S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .zoo-intro {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+    background: rgba(255,255,255,0.02);
+    padding: 20px;
+    border-left: 2px solid var(--violet);
+  }
+  .zoo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .zoo-card {
+    background: var(--bg2);
+    border: 1px solid #1a1a1a;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .zoo-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--blood);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
+  }
+  .zoo-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid var(--blood);
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<!-- НАВИГАЦИЯ -->
+<div style="padding: 20px; max-width: 1100px; margin: 0 auto;">
+  <a href="index.html" class="btn" style="border-color: var(--muted); color: var(--muted);">&larr; На главную</a>
+</div>
+
+<!-- СЕКЦИЯ ЗООУГОЛКА -->
+<section id="zoo">
+  <h2 class="sec-title">Зооуголок</h2>
+  
+  <div class="zoo-intro">
+    <p>Это пространство для handmade криптомемасиков. Предлагаем участие всем желающим. Для затравки вкидываем собственные креативы. Сопротивляйтесь, если сможете. Здесь обитают козёл против овцы, коза против овцы и тюлень против оленя. Всё, на этом останавливаемся. Дальше будем просто добрасывать генерации фото и видео. Погнали.</p>
+  </div>
+
+  <div class="zoo-grid">
+    <!-- 1. Тюлень против оленя -->
+    <div class="zoo-card">
+      <img src="img/IMG_20261103_151709_108.jpg" alt="Тюлень против оленя" />
+    </div>
+
+    <!-- 2. Овца против козы -->
+    <div class="zoo-card">
+      <img src="img/IMG_20261103_151716_542.jpg" alt="Овца против козы" />
+    </div>
+
+    <!-- 3. Козёл против овцы -->
+    <div class="zoo-card">
+      <img src="img/IMG_20261103_151712_469.jpg" alt="Козёл против овцы" />
+    </div>
+  </div>
+</section>
+
+<!-- ФУТЕР -->
+<footer>
+  <div class="logo">S&amp;S</div>
+  <p>Соня и Саня. Хроники, музыка, ритуалы.</p>
+  <p class="copy">© S&amp;S</p>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>
