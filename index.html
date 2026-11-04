@@ -53,20 +53,46 @@
   <div class="hero-symbols">
     <div class="symbol-left">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Герметический крест (Египетский) -->
-        <g fill="none" stroke="#cc0000" stroke-width="2" filter="drop-shadow(0 0 5px rgba(204,0,0,0.8))">
-          <path d="M30 20 L70 20 M50 20 L50 80 M40 80 L60 80 M45 85 L55 85 M48 90 L52 90"/>
-          <circle cx="50" cy="15" r="5" stroke-width="2"/>
+        <defs>
+          <filter id="metalGlowRed" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+          <linearGradient id="redMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff3333"/>
+            <stop offset="50%" stop-color="#aa0000"/>
+            <stop offset="100%" stop-color="#550000"/>
+          </linearGradient>
+        </defs>
+        <!-- Герметический крест (Египетский, Анкх-стиль) -->
+        <g fill="none" stroke="url(#redMetal)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#metalGlowRed)">
+          <path d="M50 10 L50 90 M25 35 L75 35 M35 90 L65 90 M42 95 L58 95 M48 100 L52 100"/>
+          <circle cx="50" cy="15" r="8" fill="url(#redMetal)" stroke="none"/>
         </g>
       </svg>
     </div>
     
     <div class="symbol-right">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- Перевернутый крест (Сатанинский) -->
-        <g fill="none" stroke="#8a2be2" stroke-width="2" filter="drop-shadow(0 0 5px rgba(138,43,226,0.8))">
-          <path d="M50 10 L50 90 M30 80 L70 80 M40 90 L60 90"/>
-          <circle cx="50" cy="95" r="3" fill="#8a2be2" stroke="none"/>
+        <defs>
+          <filter id="metalGlowViolet" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+          </filter>
+          <linearGradient id="violetMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#d966ff"/>
+            <stop offset="50%" stop-color="#8a2be2"/>
+            <stop offset="100%" stop-color="#4b0082"/>
+          </linearGradient>
+        </defs>
+        <!-- Перевернутый крест (Сатанинский) - ТОЛЬКО 2 ПЕРЕКЛАДИНЫ -->
+        <g fill="none" stroke="url(#violetMetal)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" filter="url(#metalGlowViolet)">
+          <!-- Вертикальная линия -->
+          <path d="M50 10 L50 90" />
+          <!-- Верхняя перекладина (короткая) -->
+          <path d="M30 30 L70 30" />
+          <!-- Нижняя перекладина (длинная) -->
+          <path d="M20 80 L80 80" />
         </g>
       </svg>
     </div>
