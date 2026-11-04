@@ -10,26 +10,84 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
+  .zoo-warning {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--muted);
+    text-align: center;
+  }
+  .zoo-warning strong {
+    color: var(--blood);
+    text-shadow: 0 0 10px var(--blood-glow);
+  }
+  
+  /* Хрустальный шар */
+  .crystal-ball-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+  }
+  
+  .crystal-ball {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(138, 43, 226, 0.4), #000);
+    box-shadow: 0 0 40px var(--violet-glow), inset 0 0 30px rgba(255, 255, 255, 0.1);
+    position: relative;
+    animation: pulse 3s infinite alternate;
+    margin-bottom: 30px;
+  }
+  
+  .crystal-ball::after {
+    content: '';
+    position: absolute;
+    top: 20%; left: 20%;
+    width: 40%; height: 20%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(-45deg);
+    filter: blur(4px);
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 40px var(--violet-glow), inset 0 0 30px rgba(255, 255, 255, 0.1); }
+    100% { box-shadow: 0 0 60px var(--blood-glow), inset 0 0 40px rgba(255, 255, 255, 0.2); }
+  }
+
+  .zoo-btn-disabled {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid var(--muted);
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: transparent;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
   .gender-list {
     columns: 2;
     column-gap: 40px;
     list-style: none;
     padding: 0;
-    margin: 0 auto;
+    margin: 60px auto 0;
     max-width: 800px;
     font-size: 16px;
     line-height: 1.8;
     color: var(--muted);
+    opacity: 0.4;
   }
-  .gender-list li {
-    margin-bottom: 8px;
-    break-inside: avoid;
-  }
-  @media (max-width: 600px) {
-    .gender-list {
-      columns: 1;
-    }
-  }
+  .gender-list li { margin-bottom: 8px; break-inside: avoid; }
+  @media (max-width: 600px) { .gender-list { columns: 1; } }
 </style>
 </head>
 <body>
@@ -42,8 +100,21 @@
 <!-- СЕКЦИЯ ЗООУГОЛКА -->
 <section id="zoo" style="padding-top: 40px;">
   <h2 class="sec-title">Зооуголок</h2>
-  <p class="sec-sub">Пока просто список. Что это значит — узнаете позже.</p>
+  
+  <div class="zoo-warning">
+    <p style="margin-bottom: 20px;"><strong>Привет, зверёк.</strong></p>
+    <p style="margin-bottom: 20px;">Сразу предупреждаем: ты ступаешь на очень скользкий и тонкий лёд. Прежде чем узнать о себе то, чего знать, может быть, было бы и не надо, — подумай, оно тебе реально надо?</p>
+    <p style="margin-bottom: 20px;">Сейчас ты переходишь к <strong>Crystal Ball</strong>, за которым скрывается половая бездна. Вглядываясь в него по-ницшеански долго, ты рискуешь обрести идентичность, которой, как своей высокой судьбе, придётся неуклонно следовать.</p>
+    <p><strong>Ещё раз предупреждаем тебя: отрекись и переходи на главную.</strong></p>
+  </div>
 
+  <!-- ХРУСТАЛЬНЫЙ ШАР -->
+  <div class="crystal-ball-wrap">
+    <div class="crystal-ball"></div>
+    <button class="zoo-btn-disabled">Скоро</button>
+  </div>
+
+  <!-- СПИСОК ГЕНДЕРОВ -->
   <ul class="gender-list">
     <li>Agender</li>
     <li>Androgyne</li>
