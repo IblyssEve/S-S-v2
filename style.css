@@ -94,6 +94,34 @@ section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; position: relat
   filter: drop-shadow(0 0 10px rgba(204, 0, 0, 0.4));
 }
 
+/* СИМВОЛЫ ПО БОКАМ */
+.hero-symbols {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5vw;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.symbol-left, .symbol-right {
+  width: clamp(60px, 10vw, 120px);
+  opacity: 0.6;
+}
+
+.symbol-left svg, .symbol-right svg {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .hero-symbols { display: none; } /* На мобильных скрываем, чтобы не мешали */
+}
+
 .hero-content {
   position: relative;
   z-index: 5;
@@ -305,65 +333,4 @@ footer .copy { margin-top: 24px; color: #4a4538; }
   .hero h1 { letter-spacing: -0.03em; }
   .btn { padding: 12px 20px; font-size: 12px; }
   .hero-content { margin-top: 0; }
-  }
-/* --- СТИЛИ ДЛЯ ХРОНИК --- */
-.chronicles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-}
-
-.chron-card {
-  background: var(--bg2);
-  border: 1px solid #1a1a1a;
-  overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
-  display: flex;
-  flex-direction: column;
-}
-
-.chron-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--blood);
-  box-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
-}
-
-.chron-img {
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.chron-video {
-  height: 220px;
-  width: 100%;
-  border-bottom: 1px solid #1a1a1a;
-}
-
-.chron-body { 
-  padding: 20px; 
-  flex-grow: 1; 
-}
-
-.chron-body h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: var(--blood);
-  text-shadow: 0 0 8px var(--blood-glow);
-}
-
-.chron-body p {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.chronicles-note {
-  margin-top: 32px;
-  padding: 16px;
-  border-left: 3px solid var(--blood);
-  box-shadow: -4px 0 12px -4px var(--blood-glow);
-  color: var(--muted);
-  font-size: 13px;
 }
