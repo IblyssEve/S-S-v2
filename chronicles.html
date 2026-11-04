@@ -8,7 +8,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="chronicles.css">
+
+<style>
+  /* ЖЕСТКИЕ СТИЛИ ДЛЯ ХРОНИК */
+  .chronicles {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .chron-card {
+    background: var(--bg2) !important;
+    border: 1px solid #1a1a1a !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .chron-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: var(--blood) !important;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.15) !important;
+  }
+  .chron-img {
+    height: 220px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    border-bottom: 1px solid #1a1a1a !important;
+  }
+  .chron-video {
+    height: 220px !important;
+    width: 100% !important;
+    border-bottom: 1px solid #1a1a1a !important;
+  }
+  .chron-body { padding: 20px !important; flex-grow: 1 !important; }
+  .chron-body h3 {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+    color: var(--blood) !important;
+    text-shadow: 0 0 8px var(--blood-glow) !important;
+  }
+  .chron-body p { font-size: 14px !important; color: var(--muted) !important; }
+</style>
 </head>
 <body>
 
@@ -21,13 +61,11 @@
 <section id="chronicles">
   <h2 class="sec-title">Хроники… <s style="color:#fff; opacity:0.5;">Акаши</s> алкаши</h2>
   
-  <!-- НОВЫЙ ТЕКСТ -->
   <div style="margin-bottom: 40px; font-size: 16px; color: var(--muted); background: rgba(255,255,255,0.02); padding: 20px; border-left: 2px solid var(--blood); line-height: 1.8;">
     <p>Слушайте, да нам вообще похуй на вещества. Нам не нужно бухать, чтобы устроить яростный пиздец. Мы на трезвую голову выдаем такой бэд-трип, что у любого трипующего снесет крышу. Заброшки, ночные гонки, караоке до утра, ритуалы с подрунями и черная магия. Мы не ищем приключений на свою жопу — мы и есть те самые приключения. Наш вайб — это чистый адреналин и абсолютный хаос. Охота должна быть на жизнь, а не на пиво. Погнали!</p>
   </div>
 
   <div class="chronicles">
-    <!-- Карточка 1: Заброшки -->
     <div class="chron-card">
       <iframe class="chron-video" src="https://rutube.ru/play/embed/34649744ce4302c1c8cd96edf1b2c901/" allowfullscreen></iframe>
       <div class="chron-body">
@@ -36,7 +74,6 @@
       </div>
     </div>
 
-    <!-- Карточка 2: Караоке -->
     <div class="chron-card">
       <iframe class="chron-video" src="https://rutube.ru/play/embed/6497f8f4e57cd5b9d9fa7fe14f199d0a/" allowfullscreen></iframe>
       <div class="chron-body">
@@ -45,7 +82,6 @@
       </div>
     </div>
 
-    <!-- Карточка 3: Ситников -->
     <div class="chron-card">
       <img class="chron-img" src="https://iblysseve.github.io/SS/m1000x1000.jpeg" alt="Ситников" />
       <div class="chron-body">
@@ -54,7 +90,6 @@
       </div>
     </div>
 
-    <!-- Карточка 4: Ритуалы с подругой -->
     <div class="chron-card">
       <img class="chron-img" src="https://iblysseve.github.io/SS/Screenshot_20261029_184850_Telegram.jpg" alt="Ритуал с подругой" />
       <div class="chron-body">
