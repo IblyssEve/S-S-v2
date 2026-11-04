@@ -8,42 +8,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=IBM+Plex+Mono:wght@400;600&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
 <style>
-  .zoo-intro {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.8;
-    background: rgba(255,255,255,0.02);
-    padding: 20px;
-    border-left: 2px solid var(--violet);
-  }
-  .zoo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1100px;
+  .gender-list {
+    columns: 2;
+    column-gap: 40px;
+    list-style: none;
+    padding: 0;
     margin: 0 auto;
+    max-width: 800px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
   }
-  .zoo-card {
-    background: var(--bg2);
-    border: 1px solid #1a1a1a;
-    padding: 16px;
-    text-align: center;
-    transition: transform 0.2s, border-color 0.2s;
+  .gender-list li {
+    margin-bottom: 8px;
+    break-inside: avoid;
   }
-  .zoo-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--blood);
-    box-shadow: 0 0 20px rgba(204, 0, 0, 0.15);
-  }
-  .zoo-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border: 2px solid var(--blood);
-    display: block;
+  @media (max-width: 600px) {
+    .gender-list {
+      columns: 1;
+    }
   }
 </style>
 </head>
@@ -55,29 +40,83 @@
 </div>
 
 <!-- СЕКЦИЯ ЗООУГОЛКА -->
-<section id="zoo">
+<section id="zoo" style="padding-top: 40px;">
   <h2 class="sec-title">Зооуголок</h2>
-  
-  <div class="zoo-intro">
-    <p>Это пространство для handmade криптомемасиков. Предлагаем участие всем желающим. Для затравки вкидываем собственные креативы. Сопротивляйтесь, если сможете. Здесь обитают козёл против овцы, коза против овцы и тюлень против оленя. Всё, на этом останавливаемся. Дальше будем просто добрасывать генерации фото и видео. Погнали.</p>
-  </div>
+  <p class="sec-sub">Пока просто список. Что это значит — узнаете позже.</p>
 
-  <div class="zoo-grid">
-    <!-- 1. Тюлень против оленя -->
-    <div class="zoo-card">
-      <img src="img/IMG_20261103_151709_108.jpg" alt="Тюлень против оленя" />
-    </div>
-
-    <!-- 2. Овца против козы -->
-    <div class="zoo-card">
-      <img src="img/IMG_20261103_151716_542.jpg" alt="Овца против козы" />
-    </div>
-
-    <!-- 3. Козёл против овцы -->
-    <div class="zoo-card">
-      <img src="img/IMG_20261103_151712_469.jpg" alt="Козёл против овцы" />
-    </div>
-  </div>
+  <ul class="gender-list">
+    <li>Agender</li>
+    <li>Androgyne</li>
+    <li>Androgynes</li>
+    <li>Androgynous</li>
+    <li>Asexual</li>
+    <li>Bigender</li>
+    <li>Cis</li>
+    <li>Cis Female</li>
+    <li>Cis Male</li>
+    <li>Cis Man</li>
+    <li>Cis Woman</li>
+    <li>Cisgender</li>
+    <li>Cisgender Female</li>
+    <li>Cisgender Male</li>
+    <li>Cisgender Man</li>
+    <li>Cisgender Woman</li>
+    <li>F2M</li>
+    <li>Female to Male</li>
+    <li>Female to Male Trans Man</li>
+    <li>Female to Male Transgender Man</li>
+    <li>Female to Male Transsexual Man</li>
+    <li>FTM</li>
+    <li>Gender Fluid</li>
+    <li>Gender Neutral</li>
+    <li>Gender Nonconforming</li>
+    <li>Gender Questioning</li>
+    <li>Gender Variant</li>
+    <li>Genderqueer</li>
+    <li>Hermaphrodite</li>
+    <li>Intersex</li>
+    <li>Intersex Man</li>
+    <li>Intersex Person</li>
+    <li>Intersex Woman</li>
+    <li>M2F</li>
+    <li>Male to Female</li>
+    <li>Male to Female Trans Woman</li>
+    <li>Male to Female Transgender Woman</li>
+    <li>Male to Female Transsexual Woman</li>
+    <li>Man</li>
+    <li>MTF</li>
+    <li>Neither</li>
+    <li>Neutrois</li>
+    <li>Non-binary</li>
+    <li>Other</li>
+    <li>Pangender</li>
+    <li>Polygender</li>
+    <li>T* Man</li>
+    <li>T* Woman</li>
+    <li>Trans</li>
+    <li>Trans Female</li>
+    <li>Trans Male</li>
+    <li>Trans Man</li>
+    <li>Trans Person</li>
+    <li>Trans*Female</li>
+    <li>Trans*Male</li>
+    <li>Trans*Man</li>
+    <li>Trans*Person</li>
+    <li>Trans*Woman</li>
+    <li>Transexual</li>
+    <li>Transexual Female</li>
+    <li>Transexual Male</li>
+    <li>Transexual Man</li>
+    <li>Transexual Person</li>
+    <li>Transexual Woman</li>
+    <li>Transgender Female</li>
+    <li>Transgender Person</li>
+    <li>Transmasculine</li>
+    <li>Two* Person</li>
+    <li>Two-Spirit</li>
+    <li>Two-Spirit Person</li>
+    <li>Woman</li>
+  </ul>
 </section>
 
 <!-- ФУТЕР -->
