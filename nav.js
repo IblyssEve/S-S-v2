@@ -1,6 +1,8 @@
+// Проверяем, согласился ли пользователь уже
 const isAdult = localStorage.getItem('ss_adult_consent');
 
 if (!isAdult) {
+  // Если нет — создаем и показываем дисклеймер
   const modalHTML = `
     <div id="age-disclaimer" style="
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -18,40 +20,28 @@ if (!isAdult) {
         <h2 style="
           font-family: 'Unbounded', sans-serif; color: #cc0000; 
           font-size: 24px; margin-bottom: 20px; text-shadow: 0 0 15px rgba(204,0,0,0.6);
-        ">ВНИМАНИЕ. МАТЕРИАЛЫ 18+</h2>
+        ">ВНИМАНИЕ. ЦИФРОВОЙ ГРИМУАР.</h2>
         
         <div style="color: #8a8578; font-size: 13px; text-align: left; line-height: 1.6; margin-bottom: 20px;">
-          <p style="margin-bottom: 10px;">Этот сайт содержит элементы сатанинской эстетики, пентаграммы, упоминания ритуалов и техномагии. На сайте также содержится обсценная лексика (мат).</p>
-        </div>
-
-        <!-- ФОТО РАСПЯТОГО ХРИСТА -->
-        <div style="margin-bottom: 20px;">
-          <img src="img/IMG_20261102_174200_157.jpg" alt="Иисус Христос" style="width: 100%; max-width: 300px; border: 1px solid #333;">
-        </div>
-        
-        <p style="color: #fff; font-size: 18px; font-weight: bold; margin-bottom: 20px;">
-          Любим. Скорбим. Ждём.<a href="#ino-note-disclaimer" style="color: #cc0000; text-decoration: none;">*</a>
-        </p>
-        
-        <!-- ПОСТЕР ФИЛЬМА -->
-        <div style="margin-bottom: 20px;">
-          <img src="img/IMG_20261102_174204_437.jpg" alt="Постер фильма" style="width: 100%; max-width: 300px; border: 1px solid #333;">
-        </div>
-
-        <!-- ПРИМЕЧАНИЕ ПРО "НЕ ОСКОРБЛЯЕМ" -->
-        <div style="color: #8a8578; font-size: 13px; text-align: left; line-height: 1.6; margin-bottom: 20px;">
+          <p style="margin-bottom: 10px;">Обычные книги учат Изумрудной скрижали Гермеса Трисмегиста. Мы же предлагаем тебе заглянуть в <strong>«Рубиновую скрижаль сатанинской заброшки»</strong>. Это герметический трактат, переписанный кровью и ржавчиной.</p>
+          <p style="margin-bottom: 10px;">Этот сайт содержит элементы сатанинской эстетики, пентаграммы, упоминания ритуалов и техномагии. На сайте также содержится обсценная лексика (мат), а также грубые, грязные шутки сексуального характера.</p>
           <p style="margin-bottom: 10px;">Мы никого не оскорбляем. Если вы видите здесь пропаганду сатанизма, нетрадиционных ценностей или чего-то ещё, что задевает ваши чувства — это ваша интерпретация. Слова «сатанист», «ритуал» и «демон» здесь используются в культурологическом и художественном контексте, без цели кого-либо оскорбить или разжечь рознь.</p>
           <p>Если вы верующий человек, легкоранимый или просто не готовы к такому контенту — пожалуйста, не заходите. Мы предупреждаем сразу.</p>
         </div>
 
         <hr style="border-color: #1a1a1a; margin: 20px 0;">
 
-        <!-- СНОСКА ПРО ФИЛЬМ -->
-        <p id="ino-note-disclaimer" style="color: #8a8578; font-size: 11px; text-align: left; margin-bottom: 30px; line-height: 1.5;">
+        <div style="margin-bottom: 20px;">
+          <img src="img/IMG_20261102_174200_157.jpg" alt="Иисус Христос" style="width: 100%; max-width: 300px; border: 1px solid #333; margin-bottom: 10px;">
+          <p style="color: #fff; font-size: 18px; font-weight: bold; margin-bottom: 20px;">Любим. Скорбим. Ждём.</p>
+          
+          <img src="img/IMG_20261102_174204_437.jpg" alt="Постер фильма" style="width: 100%; max-width: 300px; border: 1px solid #333; margin-bottom: 10px;">
+        </div>
+
+        <p style="color: #8a8578; font-size: 11px; text-align: left; margin-bottom: 30px; line-height: 1.5;">
           * Мы с уважением относимся к Христу и с нетерпением ждём как Его второго пришествия (till kingdom come), так и выхода фильма Мела Гибсона «Страсти Христовы: Воскрешение» (The Resurrection of the Christ). Премьера первой части запланирована на 6 мая 2027 года, второй части — на 25 мая 2028 года. Ссылка на IMDb: <a href="https://www.imdb.com/title/tt5795232/" target="_blank" style="color: #8a2be2;">https://www.imdb.com/title/tt5795232/</a>
         </p>
 
-        <!-- КНОПКИ -->
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <button id="btn-adult" style="
             background: #cc0000 !important; color: #fff !important; border: none; padding: 15px;
